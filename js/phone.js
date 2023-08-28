@@ -22,6 +22,12 @@ const displayPhones = (phones, isShowAll) => {
     showAllBtn.classList.add("hidden");
   }
 
+  if (phones.length === 0) {
+    const noData = document.getElementById("noData");
+    noData.classList.remove("hidden");
+  } else {
+    noData.classList.add("hidden");
+  }
   //   Show a specific amount of phone
   if (!isShowAll) {
     phones = phones.slice(0, 12);
@@ -95,14 +101,26 @@ const showPhoneDetails = (phone) => {
             <img src="${phone.image}" alt="">
         </div>
         <h3 class="font-bold text-lg mt-10">${phone.name}</h3>
-        <p><span class="font-semibold">Storage : </span>${phone.mainFeatures.storage}</p>
-        <p><span class="font-semibold">Display Size : </span>${phone.mainFeatures.displaySize}</p>
-        <p><span class="font-semibold">Chipset : </span>${phone.mainFeatures.chipSet}</p>
-        <p><span class="font-semibold">Memory : </span>${phone.mainFeatures.memory}</p>
+        <p><span class="font-semibold">Storage : </span>${
+          phone.mainFeatures.storage
+        }</p>
+        <p><span class="font-semibold">Display Size : </span>${
+          phone.mainFeatures.displaySize
+        }</p>
+        <p><span class="font-semibold">Chipset : </span>${
+          phone.mainFeatures.chipSet
+        }</p>
+        <p><span class="font-semibold">Memory : </span>${
+          phone.mainFeatures.memory
+        }</p>
         <p><span class="font-semibold">Slug : </span>${phone.slug}</p>
-        <p><span class="font-semibold">Release Date : </span>${phone.releaseDate}</p>
+        <p><span class="font-semibold">Release Date : </span>${
+          phone.releaseDate
+        }</p>
         <p><span class="font-semibold">Brand : </span>${phone.brand}</p>
-        <p><span class="font-semibold">GPS : </span>${phone?.others?.GPS}</p>
+        <p><span class="font-semibold">GPS : </span>${
+          phone?.others?.GPS || "No GPS Available"
+        }</p>
 
         <div class="modal-action">
             <!-- if there is a button in form, it will close the modal -->

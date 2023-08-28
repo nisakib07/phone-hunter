@@ -28,7 +28,9 @@
           Search
         </button>
       </section>
-
+      <div id="noData" class="text-center text-6xl py-40">
+        <h1>No data Available</h1>
+      </div>
       <!-- Search Result -->
       <section>
         <div id="loading" class="text-center my-40 hidden">
@@ -49,16 +51,7 @@
       <!-- Open the modal using ID.showModal() method -->
       <dialog
         id="show_details_modal"
-        class="modal modal-bottom sm:modal-middle">
-        <form method="dialog" class="modal-box">
-          <h3 class="font-bold text-lg">Hello!</h3>
-          <p class="py-4">Press ESC key or click the button below to close</p>
-          <div class="modal-action">
-            <!-- if there is a button in form, it will close the modal -->
-            <button class="btn">Close</button>
-          </div>
-        </form>
-      </dialog>
+        class="modal modal-bottom sm:modal-middle"></dialog>
     </main>
     <footer></footer>
     <!-- JS -->
